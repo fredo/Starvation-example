@@ -24,10 +24,10 @@ run
 
 Expected result:
 ```
-Ran 5 tests for test/Starvation.t.sol:StarvationTest
+Ran 5 tests for test/StarvationFlex.t.sol:StarvationFlexTest
 [PASS] test_StarvationFiveHundred() (gas: 5857155)
 [PASS] test_StarvationHundred() (gas: 1190355)
-[PASS] test_StarvationOne() (gas: 35673)
+[PASS] test_StarvationOne() (gas: 35322)
 [PASS] test_StarvationTen() (gas: 140325)
 [PASS] test_StarvationZero() (gas: 28292)
 ```
@@ -38,3 +38,15 @@ You can see that relative cost to number of adopters decreases over time,approac
 The tx cost mainly come from reading storage during the execution of the attack. This cost can be significantly 
 reduced by using calldata for the assertion adopter addresses (It's actually quite inefficient to store these values
 in storage). Calldata consume much less gas than reading from cold storage.
+
+### Optimized results
+I couldn't resist to create the optimized version.
+
+```
+Ran 5 tests for test/StarvationOptimized.t.sol:StarvationOptimizedTest
+[PASS] test_StarvationFiveHundred() (gas: 247261)
+[PASS] test_StarvationHundred() (gas: 69995)
+[PASS] test_StarvationOne() (gas: 26601)
+[PASS] test_StarvationTen() (gas: 30535)
+[PASS] test_StarvationZero() (gas: 26142)
+```
