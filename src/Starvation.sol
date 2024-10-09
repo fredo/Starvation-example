@@ -18,6 +18,17 @@ contract Starvation {
         _;
     }
 
+    fallback() external {
+        address adopter = assertionAdopters[SENTINEL];
+        if(adopter == address(0)){
+            return;
+        }
+        while(adopter != SENTINEL){
+            (bool success, ) = adopter.call{value: 1}("");
+            adopter = assertionAdopters[adopter];
+        }
+    }
+
     function addAssertionAdopter(address adopter) notSentinel(adopter) external {
         require(assertionAdopters[adopter] == address(0), "Assertion adopter already registered");
         if(assertionAdopters[SENTINEL] == address(0)){
