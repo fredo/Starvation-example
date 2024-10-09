@@ -6,7 +6,7 @@ contract AssertionAdopter {
     receive() external payable{}
 }
 
-contract Starvation {
+contract StarvationFlex {
 
     address internal constant SENTINEL = address(0x1);
 
