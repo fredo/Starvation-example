@@ -2,10 +2,6 @@
 pragma solidity ^0.8.13;
 
 
-contract AssertionAdopter {
-    receive() external payable{}
-}
-
 contract StarvationOptimized {
 
     fallback(bytes calldata data) external returns (bytes memory){

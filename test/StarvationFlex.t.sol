@@ -2,7 +2,8 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {AssertionAdopter, StarvationFlex} from "../src/StarvationFlex.sol";
+import "../src/AssertionAdopter.sol";
+import "../src/StarvationFlex.sol";
 
 contract StarvationFlexTest is Test {
     StarvationFlex public starvation;

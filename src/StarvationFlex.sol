@@ -2,10 +2,6 @@
 pragma solidity ^0.8.13;
 
 
-contract AssertionAdopter {
-    receive() external payable{}
-}
-
 contract StarvationFlex {
 
     address internal constant SENTINEL = address(0x1);
