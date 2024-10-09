@@ -1,5 +1,5 @@
 ## Starvation
-This contract demonstrates the possibility of calling an unlimited amount of assertion adopters.
+This contract demonstrates the possibility of calling the maximum amount of assertion adopters within one transaction.
 This is a specific attack to the credible layer in which as many as possible assertion adopters are called in a 
 single transaction.
 
